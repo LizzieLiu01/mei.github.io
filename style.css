@@ -156,7 +156,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8rem 4rem 4rem;
+    padding: 5rem 4rem 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -959,7 +959,7 @@ body {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 7rem 2rem 3rem;
+        padding: 5rem 2rem 3rem;
     }
 
     .hero-content {

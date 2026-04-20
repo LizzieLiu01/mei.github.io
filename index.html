@@ -1,44 +1,507 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <title>AI Engineer | 人工智能工程师</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Personal Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- 粒子背景 -->
+    <canvas id="particle-canvas"></canvas>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a software developer with a passion for coding and open source contributions.</p>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <p>Check out some of my work on GitHub!</p>
-        <ul>
-            <li><a href="https://github.com/username/repository1">Project 1</a></li>
-            <li><a href="https://github.com/username/repository2">Project 2</a></li>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-brain"></i>
+            <span class="brand-text" data-i18n="brand">AI Engineer</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" data-i18n="nav.home">首页</a></li>
+            <li><a href="#about" data-i18n="nav.about">关于</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">技能</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">项目</a></li>
+            <li><a href="#achievements" data-i18n="nav.achievements">成就</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
         </ul>
+        <div class="nav-controls">
+            <button id="lang-toggle" class="lang-btn">
+                <i class="fas fa-globe"></i>
+                <span>EN</span>
+            </button>
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span data-i18n="hero.status">专注于AGI研发</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text" data-i18n="hero.title">构建智能未来</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                深度学习研究员 | 大模型架构师 | 智能系统开发者
+            </p>
+            <p class="hero-description" data-i18n="hero.description">
+                专注于大规模语言模型、计算机视觉和自主智能体系统的研发。致力于用AI技术解决复杂问题，推动人工智能边界的不断拓展。
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label" data-i18n="hero.stats.years">年经验</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label" data-i18n="hero.stats.projects">个项目</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10B+</span>
+                    <span class="stat-label" data-i18n="hero.stats.params">参数训练</span>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    <span data-i18n="hero.cta.projects">探索项目</span>
+                </a>
+                <a href="https://github.com" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i>
+                    <span data-i18n="hero.cta.github">GitHub</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="ai-brain">
+                <div class="brain-core"></div>
+                <div class="orbit orbit-1"></div>
+                <div class="orbit orbit-2"></div>
+                <div class="orbit orbit-3"></div>
+                <div class="floating-icons">
+                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-microchip"></i>
+                    <i class="fas fa-network-wired"></i>
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you'd like to get in touch, feel free to reach out via email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <!-- 关于我 -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="about.tag">ABOUT ME</span>
+                <h2 class="section-title" data-i18n="about.title">关于我</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">深耕AI领域的前沿探索者</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card expertise">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-i18n="about.expertise.title">核心专长</h3>
+                    <ul class="expertise-list">
+                        <li data-i18n="about.expertise.1">大规模语言模型(LLM)架构设计与训练</li>
+                        <li data-i18n="about.expertise.2">计算机视觉与多模态学习</li>
+                        <li data-i18n="about.expertise.3">强化学习与自主智能体</li>
+                        <li data-i18n="about.expertise.4">深度学习系统优化与部署</li>
+                        <li data-i18n="about.expertise.5">AI基础设施与MLOps</li>
+                    </ul>
+                </div>
+                <div class="about-card experience">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-i18n="about.experience.title">从业经历</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 data-i18n="about.exp1.title">首席AI架构师</h4>
+                                <span class="timeline-meta" data-i18n="about.exp1.meta">2022 - 至今 | 顶尖科技公司</span>
+                                <p data-i18n="about.exp1.desc">负责百亿级参数大模型的架构设计与训练优化，带领团队突破多项技术指标</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 data-i18n="about.exp2.title">高级AI研究员</h4>
+                                <span class="timeline-meta" data-i18n="about.exp2.meta">2019 - 2022 | AI研究院</span>
+                                <p data-i18n="about.exp2.desc">主导多模态大模型研究，发表多篇顶级会议论文，推动技术产业化</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4 data-i18n="about.exp3.title">机器学习工程师</h4>
+                                <span class="timeline-meta" data-i18n="about.exp3.meta">2017 - 2019 | 科技公司</span>
+                                <p data-i18n="about.exp3.desc">设计并落地多个生产级AI系统，处理PB级数据，服务千万用户</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Your Name. All Rights Reserved.</p>
+    <!-- 技能栈 -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="skills.tag">SKILLS</span>
+                <h2 class="section-title" data-i18n="skills.title">技术栈</h2>
+                <p class="section-subtitle" data-i18n="skills.subtitle">全栈AI工程能力覆盖</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> <span data-i18n="skills.ai">人工智能</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">PyTorch</span>
+                        <span class="skill-tag expert">TensorFlow</span>
+                        <span class="skill-tag expert">Transformers</span>
+                        <span class="skill-tag expert">LLaMA</span>
+                        <span class="skill-tag expert">GPT</span>
+                        <span class="skill-tag expert">BERT</span>
+                        <span class="skill-tag advanced">RLHF</span>
+                        <span class="skill-tag advanced">LoRA</span>
+                        <span class="skill-tag advanced">Quantization</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> <span data-i18n="skills.programming">编程语言</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">Python</span>
+                        <span class="skill-tag advanced">C++</span>
+                        <span class="skill-tag advanced">CUDA</span>
+                        <span class="skill-tag advanced">Rust</span>
+                        <span class="skill-tag intermediate">Go</span>
+                        <span class="skill-tag intermediate">Julia</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> <span data-i18n="skills.infrastructure">基础设施</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">Kubernetes</span>
+                        <span class="skill-tag expert">Docker</span>
+                        <span class="skill-tag expert">Ray</span>
+                        <span class="skill-tag advanced">MLflow</span>
+                        <span class="skill-tag advanced">Weights & Biases</span>
+                        <span class="skill-tag advanced">Triton Inference</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> <span data-i18n="skills.cloud">云平台</span></h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag expert">AWS</span>
+                        <span class="skill-tag expert">GCP</span>
+                        <span class="skill-tag advanced">Azure</span>
+                        <span class="skill-tag advanced">LambdaLabs</span>
+                        <span class="skill-tag advanced">CoreWeave</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-stack-visual">
+                <div class="stack-layers">
+                    <div class="stack-layer">
+                        <span class="layer-label" data-i18n="skills.layers.apps">AI应用层</span>
+                        <div class="layer-content">RAG Agents · Chatbots · Code Generation · Multi-Agent Systems</div>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="layer-label" data-i18n="skills.layers.models">模型层</span>
+                        <div class="layer-content">LLMs · VLM · Diffusion · Embedding Models · MoE</div>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="layer-label" data-i18n="skills.layers.framework">框架层</span>
+                        <div class="layer-content">PyTorch · vLLM · DeepSpeed · Megatron · JAX</div>
+                    </div>
+                    <div class="stack-layer">
+                        <span class="layer-label" data-i18n="skills.layers.infra">基础设施层</span>
+                        <div class="layer-content">GPU Cluster · Kubernetes · Storage · Networking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="projects.tag">PROJECTS</span>
+                <h2 class="section-title" data-i18n="projects.title">精选项目</h2>
+                <p class="section-subtitle" data-i18n="projects.subtitle">推动AI边界的前沿工作</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.p1.title">MegaLM-70B</h3>
+                    <p class="project-description" data-i18n="projects.p1.desc">
+                        自研700亿参数多模态大语言模型，支持文本、图像、视频理解与生成。在多个基准测试中达到SOTA水平，推理速度提升3倍。
+                    </p>
+                    <div class="project-stats-bar">
+                        <div class="p-stat">
+                            <i class="fas fa-star"></i> 2.5k
+                        </div>
+                        <div class="p-stat">
+                            <i class="fas fa-code-branch"></i> 180
+                        </div>
+                        <div class="p-stat">
+                            <i class="fas fa-bolt"></i> 70B Params
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span>PyTorch</span>
+                        <span>Transformers</span>
+                        <span>vLLM</span>
+                        <span>CUDA</span>
+                    </div>
+                </div>
+
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.p2.title">NeuralScale</h3>
+                    <p class="project-description" data-i18n="projects.p2.desc">
+                        分布式深度学习训练框架，支持千卡集群上的高效并行训练。自动优化通信策略，实现95%+的扩展效率。
+                    </p>
+                    <div class="project-stats-bar">
+                        <div class="p-stat">
+                            <i class="fas fa-star"></i> 1.8k
+                        </div>
+                        <div class="p-stat">
+                            <i class="fas fa-code-branch"></i> 120
+                        </div>
+                        <div class="p-stat">
+                            <i class="fas fa-server"></i> 1000+ GPUs
+                        </div>
+                    </div>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>CUDA</span>
+                        <span>NCCL</span>
+                        <span>Ray</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.p3.title">VisionForge</h3>
+                    <p class="project-description" data-i18n="projects.p3.desc">
+                        视觉-语言统一生成模型，实现高质量的图像生成、编辑和理解。支持多模态对话和复杂视觉推理。
+                    </p>
+                    <div class="project-tags">
+                        <span>Diffusion</span>
+                        <span>CLIP</span>
+                        <span>ViT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.p4.title">AutoAgent</h3>
+                    <p class="project-description" data-i18n="projects.p4.desc">
+                        自主AI智能体框架，支持工具使用、任务规划和多步推理。集成RAG和记忆系统，实现复杂任务自动化。
+                    </p>
+                    <div class="project-tags">
+                        <span>LangChain</span>
+                        <span>RAG</span>
+                        <span>Agents</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.p5.title">FastInfer</h3>
+                    <p class="project-description" data-i18n="projects.p5.desc">
+                        高性能LLM推理引擎，支持连续批处理、分页注意力和量化优化。单卡吞吐量提升5倍，延迟降低70%。
+                    </p>
+                    <div class="project-tags">
+                        <span>CUDA</span>
+                        <span>Triton</span>
+                        <span>TensorRT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.p6.title">ML Platform</h3>
+                    <p class="project-description" data-i18n="projects.p6.desc">
+                        企业级机器学习平台，提供模型训练、部署、监控全流程支持。支持A/B测试和自动化模型管理。
+                    </p>
+                    <div class="project-tags">
+                        <span>K8s</span>
+                        <span>Kubeflow</span>
+                        <span>MLflow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成就与认证 -->
+    <section id="achievements" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="achievements.tag">ACHIEVEMENTS</span>
+                <h2 class="section-title" data-i18n="achievements.title">成就与认证</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 data-i18n="achievements.a1.title">Kaggle Grandmaster</h3>
+                    <p data-i18n="achievements.a1.desc">获得Kaggle最高等级认证，在多个竞赛中取得金牌</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 data-i18n="achievements.a2.title">NeurIPS 最佳论文</h3>
+                    <p data-i18n="achievements.a2.desc">在顶级AI会议发表多篇论文，获最佳论文提名</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 data-i18n="achievements.a3.title">开源贡献者</h3>
+                    <p data-i18n="achievements.a3.desc">PyTorch & HuggingFace核心贡献者，PR被合并500+</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 data-i18n="achievements.a4.title">技术认证</h3>
+                    <p data-i18n="achievements.a4.desc">AWS ML Specialty · Google Cloud Professional ML · NVIDIA DLI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="contact.tag">CONTACT</span>
+                <h2 class="section-title" data-i18n="contact.title">联系我</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">欢迎探讨AI技术与合作机会</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <a href="mailto:ai@example.com" class="contact-link">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 data-i18n="contact.email">邮箱</h3>
+                        <p>ai@example.com</p>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <a href="https://github.com" target="_blank" class="contact-link">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>@ai-engineer</p>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>/in/ai-engineer</p>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <a href="#" class="contact-link">
+                        <div class="contact-icon">
+                            <i class="fas fa-rss"></i>
+                        </div>
+                        <h3 data-i18n="contact.blog">技术博客</h3>
+                        <p>ai-engineer.dev</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Engineer</span>
+                </div>
+                <p class="footer-quote" data-i18n="footer.quote">
+                    "Building the future of intelligence, one model at a time."
+                </p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <p class="footer-copyright">
+                    © 2026 AI Engineer. <span data-i18n="footer.rights">All rights reserved.</span>
+                </p>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

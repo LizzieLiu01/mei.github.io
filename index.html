@@ -1,172 +1,290 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刘一鸣 - AI工程师</title>
+    <title>Yiming Liu - AI Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 简洁导航 -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">刘一鸣</a>
-            <div class="nav-links">
-                <a href="#about">关于</a>
-                <a href="#skills">技能</a>
-                <a href="#works">作品</a>
-                <a href="#contact">联系</a>
-                <button id="lang-toggle" class="lang-switch">EN</button>
-            </div>
-            <button class="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+    <!-- 导航 -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">LIU YIMING</a>
+        <div class="nav-menu">
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+            <a href="#works" data-i18n="nav.works">Works</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
         </div>
+        <button class="lang-toggle" id="langToggle">
+            <span class="lang-current">EN</span>
+            <span class="lang-divider">/</span>
+            <span class="lang-other">中</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
-    <!-- 主内容区 -->
-    <main class="main">
-        <!-- 简介 -->
-        <section class="intro">
-            <h1 class="intro-name">刘一鸣</h1>
-            <p class="intro-title">AI工程师 / 大模型研究者</p>
-            <p class="intro-bio">
-                从事人工智能领域7年，专注于大语言模型和AI系统。<br>
-                相信技术应该简单优雅，让复杂的事情变得容易。
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-tag" data-i18n="hero.tag">AI Engineer & Researcher</div>
+            <h1 class="hero-title">
+                <span class="title-line" data-i18n="hero.title1">Building Intelligent</span>
+                <span class="title-line highlight" data-i18n="hero.title2">Systems</span>
+            </h1>
+            <p class="hero-desc" data-i18n="hero.desc">
+                Specializing in large language models, multimodal AI, and scalable ML systems. 
+                7 years of experience pushing the boundaries of what's possible with artificial intelligence.
             </p>
-            <div class="intro-links">
-                <a href="mailto:liuym0212@gmail.com" class="link">liuym0212@gmail.com</a>
-                <span class="divider">|</span>
-                <a href="https://github.com" target="_blank" class="link">GitHub</a>
-                <span class="divider">|</span>
-                <a href="https://linkedin.com" target="_blank" class="link">LinkedIn</a>
+            <div class="hero-cta">
+                <a href="#works" class="btn btn-primary" data-i18n="hero.cta.primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta.secondary">Get In Touch</a>
             </div>
-        </section>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text" data-i18n="hero.scroll">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-        <!-- 关于 -->
-        <section id="about" class="section">
-            <h2 class="section-title">关于我</h2>
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number">7+</span>
+            <span class="stat-label" data-i18n="stats.years">Years Experience</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label" data-i18n="stats.projects">Projects</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">10B+</span>
+            <span class="stat-label" data-i18n="stats.params">Parameters Trained</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label" data-i18n="stats.papers">Publications</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="about.tag">01 / About</span>
+                <h2 class="section-title" data-i18n="about.title">The Mind Behind The Machine</h2>
+            </div>
             <div class="about-content">
                 <div class="about-text">
+                    <p class="lead" data-i18n="about.lead">
+                        I'm an AI engineer who believes that the best technology is invisible—
+                        it simply works, elegantly and efficiently.
+                    </p>
                     <p data-i18n="about.p1">
-                        我从事AI领域已有7年，从计算机视觉到目前专注于大语言模型。这段经历让我明白，好的技术不在于有多复杂，而在于能否真正解决问题。
+                        My journey began with computer vision, evolved through deep learning research, 
+                        and has led me to the frontier of large language models and multimodal AI systems. 
+                        Along the way, I've learned that great AI isn't just about impressive metrics—
+                        it's about creating real value for real people.
                     </p>
                     <p data-i18n="about.p2">
-                        我参与过开源项目，也在顶会发表过论文。但最有成就感的是看到自己的工作帮助到真实的用户。
-                    </p>
-                    <p data-i18n="about.p3">
-                        工作之余，我喜欢徒步和摄影。我相信好的灵感往往来自代码之外的时光。
+                        I've contributed to open-source projects that power thousands of applications, 
+                        published research at top-tier conferences, and led teams to build systems 
+                        that handle billions of requests. But what drives me isn't the numbers—
+                        it's the moment when a complex problem becomes beautifully simple.
                     </p>
                 </div>
-                <div class="about-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">所在地</span>
-                        <span class="meta-value">中国 · 北京</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">经验</span>
-                        <span class="meta-value">7 年</span>
-                    </div>
-                    <div class="meta-item">
-                        <span class="meta-label">专注</span>
-                        <span class="meta-value">LLM / 多模态 / 系统优化</span>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-grid"></div>
+                        <span class="placeholder-text">AI Engineer</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 技能 -->
-        <section id="skills" class="section">
-            <h2 class="section-title">技能</h2>
-            <div class="skills-grid">
-                <div class="skill-block">
-                    <h3>人工智能</h3>
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="expertise.tag">02 / Expertise</span>
+                <h2 class="section-title" data-i18n="expertise.title">Skills & Technologies</h2>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-i18n="expertise.ai.title">AI & Deep Learning</h3>
                     <ul>
-                        <li>PyTorch / Transformers</li>
-                        <li>LLaMA / GPT / BERT</li>
+                        <li>Large Language Models (LLaMA, GPT)</li>
+                        <li>Multimodal Learning</li>
                         <li>Computer Vision</li>
-                        <li>RLHF / Fine-tuning</li>
+                        <li>Reinforcement Learning from Human Feedback</li>
                     </ul>
                 </div>
-                <div class="skill-block">
-                    <h3>工程</h3>
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 data-i18n="expertise.systems.title">ML Systems</h3>
                     <ul>
-                        <li>Python / C++ / CUDA</li>
-                        <li>Kubernetes / Docker</li>
-                        <li>Distributed Training</li>
-                        <li>MLOps</li>
+                        <li>Distributed Training (PyTorch, DeepSpeed)</li>
+                        <li>Model Optimization & Quantization</li>
+                        <li>Inference Acceleration</li>
+                        <li>MLOps & Model Serving</li>
                     </ul>
                 </div>
-                <div class="skill-block">
-                    <h3>语言</h3>
+                <div class="expertise-card">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 data-i18n="expertise.engineering.title">Engineering</h3>
                     <ul>
-                        <li>中文 - 母语</li>
-                        <li>English - 流利</li>
+                        <li>Python, C++, CUDA</li>
+                        <li>Kubernetes & Docker</li>
+                        <li>Cloud Infrastructure (AWS, GCP)</li>
+                        <li>Data Pipeline Architecture</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 作品 -->
-        <section id="works" class="section">
-            <h2 class="section-title">作品</h2>
+    <!-- Works Section -->
+    <section id="works" class="works section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="works.tag">03 / Selected Works</span>
+                <h2 class="section-title" data-i18n="works.title">Projects That Define Me</h2>
+            </div>
             <div class="works-list">
-                <article class="work-item">
-                    <div class="work-main">
+                <article class="work-card featured">
+                    <div class="work-visual">
+                        <div class="work-number">01</div>
+                        <div class="work-preview">
+                            <div class="preview-box large"></div>
+                        </div>
+                    </div>
+                    <div class="work-info">
                         <h3>MegaLM-70B</h3>
-                        <p>700亿参数多模态大语言模型。从零参与架构设计和训练流程搭建。</p>
-                    </div>
-                    <div class="work-tags">
-                        <span>PyTorch</span>
-                        <span>Transformers</span>
+                        <p class="work-desc" data-i18n="works.p1.desc">
+                            A 70-billion parameter multimodal language model built from scratch. 
+                            Led architecture design, training pipeline development, and inference optimization. 
+                            Achieved SOTA results on multiple benchmarks.
+                        </p>
+                        <div class="work-tags">
+                            <span>PyTorch</span>
+                            <span>Transformers</span>
+                            <span>Distributed Training</span>
+                        </div>
+                        <div class="work-stats">
+                            <span><i class="fas fa-star"></i> 2.5k</span>
+                            <span><i class="fas fa-code-branch"></i> 180 forks</span>
+                        </div>
                     </div>
                 </article>
 
-                <article class="work-item">
-                    <div class="work-main">
+                <article class="work-card">
+                    <div class="work-visual">
+                        <div class="work-number">02</div>
+                        <div class="work-preview">
+                            <div class="preview-box"></div>
+                        </div>
+                    </div>
+                    <div class="work-info">
                         <h3>NeuralScale</h3>
-                        <p>分布式训练框架，帮助小团队高效训练大模型。</p>
-                    </div>
-                    <div class="work-tags">
-                        <span>Python</span>
-                        <span>CUDA</span>
+                        <p class="work-desc" data-i18n="works.p2.desc">
+                            Distributed training framework enabling efficient large model training 
+                            on commodity hardware. Implements advanced parallelism strategies 
+                            with 95%+ scaling efficiency.
+                        </p>
+                        <div class="work-tags">
+                            <span>Python</span>
+                            <span>CUDA</span>
+                            <span>NCCL</span>
+                        </div>
                     </div>
                 </article>
 
-                <article class="work-item">
-                    <div class="work-main">
-                        <h3>AutoAgent</h3>
-                        <p>AI自主智能体框架，支持复杂任务自动化。</p>
+                <article class="work-card">
+                    <div class="work-visual">
+                        <div class="work-number">03</div>
+                        <div class="work-preview">
+                            <div class="preview-box"></div>
+                        </div>
                     </div>
-                    <div class="work-tags">
-                        <span>LangChain</span>
-                        <span>RAG</span>
+                    <div class="work-info">
+                        <h3>AutoAgent</h3>
+                        <p class="work-desc" data-i18n="works.p3.desc">
+                            Autonomous AI agent framework with tool use, task planning, and memory. 
+                            Powers complex workflow automation with natural language interfaces.
+                        </p>
+                        <div class="work-tags">
+                            <span>LangChain</span>
+                            <span>RAG</span>
+                            <span>Agents</span>
+                        </div>
                     </div>
                 </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 联系 -->
-        <section id="contact" class="section">
-            <h2 class="section-title">联系</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
             <div class="contact-content">
-                <p class="contact-text">
-                    有想法想讨论？欢迎随时联系。
-                </p>
-                <a href="mailto:liuym0212@gmail.com" class="contact-email">liuym0212@gmail.com</a>
-                <div class="contact-socials">
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fas fa-rss"></i></a>
+                <div class="contact-text">
+                    <span class="section-tag" data-i18n="contact.tag">04 / Contact</span>
+                    <h2 class="contact-title" data-i18n="contact.title">Let's Build Something Amazing</h2>
+                    <p class="contact-desc" data-i18n="contact.desc">
+                        Whether you have a project in mind, want to discuss AI trends, 
+                        or just want to say hello—I'd love to hear from you.
+                    </p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:liuym0212@gmail.com" class="contact-item">
+                        <span class="contact-label" data-i18n="contact.email">Email</span>
+                        <span class="contact-value">liuym0212@gmail.com</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="contact-item">
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">@yimingliu</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="contact-item">
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">/in/yimingliu</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- 简洁页脚 -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>© 2026 刘一鸣 · 保持好奇</p>
+        <div class="footer-content">
+            <p class="footer-quote" data-i18n="footer.quote">
+                "The best way to predict the future is to build it."
+            </p>
+            <div class="footer-bottom">
+                <span>© 2026 Yiming Liu</span>
+                <span class="footer-divider">·</span>
+                <span data-i18n="footer.made">Crafted with code</span>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

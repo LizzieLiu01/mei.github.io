@@ -3,298 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页 | AI工程师</title>
+    <title>刘一鸣 - AI工程师</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <span class="brand-text" data-i18n="brand">我的主页</span>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#home" data-i18n="nav.home">首页</a></li>
-            <li><a href="#about" data-i18n="nav.about">关于我</a></li>
-            <li><a href="#skills" data-i18n="nav.skills">技能</a></li>
-            <li><a href="#projects" data-i18n="nav.projects">作品</a></li>
-            <li><a href="#thoughts" data-i18n="nav.thoughts">随想</a></li>
-            <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
-        </ul>
-        <div class="nav-controls">
-            <button id="lang-toggle" class="lang-btn">
-                <i class="fas fa-globe"></i>
-                <span>EN</span>
-            </button>
-            <button class="mobile-toggle">
+    <!-- 简洁导航 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">刘一鸣</a>
+            <div class="nav-links">
+                <a href="#about">关于</a>
+                <a href="#skills">技能</a>
+                <a href="#works">作品</a>
+                <a href="#contact">联系</a>
+                <button id="lang-toggle" class="lang-switch">EN</button>
+            </div>
+            <button class="nav-toggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
 
-    <!-- 首页 -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-section">
-                <div class="profile-avatar">
-                    <div class="avatar-placeholder">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
-                <div class="profile-intro">
-                    <p class="greeting" data-i18n="hero.greeting">你好，我是</p>
-                    <h1 class="hero-name">刘一鸣</h1>
-                    <p class="hero-tagline" data-i18n="hero.tagline">
-                        热爱探索AI边界的技术人
-                    </p>
-                </div>
-            </div>
-            <p class="hero-bio" data-i18n="hero.bio">
-                一名对人工智能充满热情的工程师。我相信好的技术应该服务于人，让复杂的事情变得简单。工作之余，我喜欢读科幻小说、徒步和摄影。
+    <!-- 主内容区 -->
+    <main class="main">
+        <!-- 简介 -->
+        <section class="intro">
+            <h1 class="intro-name">刘一鸣</h1>
+            <p class="intro-title">AI工程师 / 大模型研究者</p>
+            <p class="intro-bio">
+                从事人工智能领域7年，专注于大语言模型和AI系统。<br>
+                相信技术应该简单优雅，让复杂的事情变得容易。
             </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">
-                    <span data-i18n="hero.cta.works">看看我的作品</span>
-                </a>
-                <a href="#about" class="btn btn-secondary">
-                    <span data-i18n="hero.cta.more">了解更多</span>
-                </a>
+            <div class="intro-links">
+                <a href="mailto:liuym0212@gmail.com" class="link">liuym0212@gmail.com</a>
+                <span class="divider">|</span>
+                <a href="https://github.com" target="_blank" class="link">GitHub</a>
+                <span class="divider">|</span>
+                <a href="https://linkedin.com" target="_blank" class="link">LinkedIn</a>
             </div>
-            <div class="social-links">
-                <a href="https://github.com" target="_blank" class="social-link" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 关于我 -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about.title">关于我</h2>
+        <!-- 关于 -->
+        <section id="about" class="section">
+            <h2 class="section-title">关于我</h2>
             <div class="about-content">
-                <div class="about-story">
-                    <p data-i18n="about.story1">
-                        我从事AI领域已有7年时间，从最初的计算机视觉到后来专注于大语言模型。这段旅程让我深刻体会到，技术的本质是为了解决问题，而不是炫技。
+                <div class="about-text">
+                    <p data-i18n="about.p1">
+                        我从事AI领域已有7年，从计算机视觉到目前专注于大语言模型。这段经历让我明白，好的技术不在于有多复杂，而在于能否真正解决问题。
                     </p>
-                    <p data-i18n="about.story2">
-                        我参与过多个开源项目，也在一些顶会发表过论文。但最让我骄傲的不是这些数字，而是我参与的产品真正帮助到了用户。
+                    <p data-i18n="about.p2">
+                        我参与过开源项目，也在顶会发表过论文。但最有成就感的是看到自己的工作帮助到真实的用户。
                     </p>
-                    <p data-i18n="about.story3">
-                        业余时间，我喜欢在户外徒步，用相机记录风景。我相信好的灵感往往来自代码之外的时光。
+                    <p data-i18n="about.p3">
+                        工作之余，我喜欢徒步和摄影。我相信好的灵感往往来自代码之外的时光。
                     </p>
                 </div>
-                <div class="about-highlights">
-                    <div class="highlight-item">
-                        <span class="highlight-icon">🎯</span>
-                        <div class="highlight-content">
-                            <h4 data-i18n="about.highlight1.title">专注领域</h4>
-                            <p data-i18n="about.highlight1.desc">大语言模型、多模态学习、AI系统优化</p>
-                        </div>
+                <div class="about-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">所在地</span>
+                        <span class="meta-value">中国 · 北京</span>
                     </div>
-                    <div class="highlight-item">
-                        <span class="highlight-icon">💡</span>
-                        <div class="highlight-content">
-                            <h4 data-i18n="about.highlight2.title">工作理念</h4>
-                            <p data-i18n="about.highlight2.desc">简单、优雅、以人为本</p>
-                        </div>
+                    <div class="meta-item">
+                        <span class="meta-label">经验</span>
+                        <span class="meta-value">7 年</span>
                     </div>
-                    <div class="highlight-item">
-                        <span class="highlight-icon">🌱</span>
-                        <div class="highlight-content">
-                            <h4 data-i18n="about.highlight3.title">持续成长</h4>
-                            <p data-i18n="about.highlight3.desc">保持好奇，保持学习</p>
-                        </div>
+                    <div class="meta-item">
+                        <span class="meta-label">专注</span>
+                        <span class="meta-value">LLM / 多模态 / 系统优化</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 技能 -->
-    <section id="skills" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title" data-i18n="skills.title">我的技能</h2>
-            <p class="section-desc" data-i18n="skills.desc">我熟悉的技术和工具</p>
-            
-            <div class="skills-content">
-                <div class="skill-group">
-                    <h3 data-i18n="skills.ai">AI & 机器学习</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">PyTorch</span>
-                        <span class="skill-item">Transformers</span>
-                        <span class="skill-item">LLaMA/GPT</span>
-                        <span class="skill-item">Computer Vision</span>
-                        <span class="skill-item">RLHF</span>
-                    </div>
+        <!-- 技能 -->
+        <section id="skills" class="section">
+            <h2 class="section-title">技能</h2>
+            <div class="skills-grid">
+                <div class="skill-block">
+                    <h3>人工智能</h3>
+                    <ul>
+                        <li>PyTorch / Transformers</li>
+                        <li>LLaMA / GPT / BERT</li>
+                        <li>Computer Vision</li>
+                        <li>RLHF / Fine-tuning</li>
+                    </ul>
                 </div>
-                <div class="skill-group">
-                    <h3 data-i18n="skills.engineering">工程能力</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">CUDA</span>
-                        <span class="skill-item">Kubernetes</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">MLOps</span>
-                    </div>
+                <div class="skill-block">
+                    <h3>工程</h3>
+                    <ul>
+                        <li>Python / C++ / CUDA</li>
+                        <li>Kubernetes / Docker</li>
+                        <li>Distributed Training</li>
+                        <li>MLOps</li>
+                    </ul>
                 </div>
-                <div class="skill-group">
-                    <h3 data-i18n="skills.interests">兴趣爱好</h3>
-                    <div class="skill-items personal">
-                        <span class="skill-item">📷 摄影</span>
-                        <span class="skill-item">🏃 跑步</span>
-                        <span class="skill-item">📚 科幻小说</span>
-                        <span class="skill-item">🎸 吉他</span>
-                    </div>
+                <div class="skill-block">
+                    <h3>语言</h3>
+                    <ul>
+                        <li>中文 - 母语</li>
+                        <li>English - 流利</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 作品 -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="projects.title">我的作品</h2>
-            <p class="section-desc" data-i18n="projects.desc">一些我参与或主导的项目</p>
-            
-            <div class="projects-list">
-                <article class="project-item">
-                    <div class="project-info">
-                        <h3 data-i18n="projects.p1.title">MegaLM-70B</h3>
-                        <p data-i18n="projects.p1.desc">
-                            一个700亿参数的多模态大语言模型项目。我从零开始参与了模型架构设计和训练流程搭建，看着它从想法变成现实的过程让我很有成就感。
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">PyTorch</span>
-                            <span class="project-tag">Transformers</span>
-                        </div>
+        <!-- 作品 -->
+        <section id="works" class="section">
+            <h2 class="section-title">作品</h2>
+            <div class="works-list">
+                <article class="work-item">
+                    <div class="work-main">
+                        <h3>MegaLM-70B</h3>
+                        <p>700亿参数多模态大语言模型。从零参与架构设计和训练流程搭建。</p>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="link-arrow" data-i18n="projects.view">查看详情 →</a>
+                    <div class="work-tags">
+                        <span>PyTorch</span>
+                        <span>Transformers</span>
                     </div>
                 </article>
 
-                <article class="project-item">
-                    <div class="project-info">
-                        <h3 data-i18n="projects.p2.title">NeuralScale</h3>
-                        <p data-i18n="projects.p2.desc">
-                            一个分布式训练框架，帮助小团队也能训练大模型。这个项目让我学会了在资源有限的情况下做最优的技术选择。
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">CUDA</span>
-                        </div>
+                <article class="work-item">
+                    <div class="work-main">
+                        <h3>NeuralScale</h3>
+                        <p>分布式训练框架，帮助小团队高效训练大模型。</p>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="link-arrow" data-i18n="projects.view">查看详情 →</a>
+                    <div class="work-tags">
+                        <span>Python</span>
+                        <span>CUDA</span>
                     </div>
                 </article>
 
-                <article class="project-item">
-                    <div class="project-info">
-                        <h3 data-i18n="projects.p3.title">AutoAgent</h3>
-                        <p data-i18n="projects.p3.desc">
-                            一个让AI能自主完成复杂任务的框架。最有趣的是看到它第一次成功完成一个多步骤任务时的那种惊喜。
-                        </p>
-                        <div class="project-meta">
-                            <span class="project-tag">LangChain</span>
-                            <span class="project-tag">Agents</span>
-                        </div>
+                <article class="work-item">
+                    <div class="work-main">
+                        <h3>AutoAgent</h3>
+                        <p>AI自主智能体框架，支持复杂任务自动化。</p>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="link-arrow" data-i18n="projects.view">查看详情 →</a>
+                    <div class="work-tags">
+                        <span>LangChain</span>
+                        <span>RAG</span>
                     </div>
                 </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 随想 -->
-    <section id="thoughts" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title" data-i18n="thoughts.title">随想</h2>
-            <p class="section-desc" data-i18n="thoughts.desc">一些关于技术和生活的思考</p>
-            
-            <div class="thoughts-list">
-                <article class="thought-card">
-                    <span class="thought-date">2024.12</span>
-                    <h3 data-i18n="thoughts.t1.title">关于AI的未来</h3>
-                    <p data-i18n="thoughts.t1.content">
-                        很多人觉得AI会取代人类，但我更愿意相信AI是放大人类创造力的工具。就像相机没有取代画家，而是让摄影成为一种新的艺术形式...
-                    </p>
-                </article>
-                <article class="thought-card">
-                    <span class="thought-date">2024.08</span>
-                    <h3 data-i18n="thoughts.t2.title">简单之美</h3>
-                    <p data-i18n="thoughts.t2.content">
-                        在技术领域，简单往往比复杂更难实现。写出一行别人能看懂的好代码，比写出一百行只有你能懂的代码要困难得多...
-                    </p>
-                </article>
-                <article class="thought-card">
-                    <span class="thought-date">2024.03</span>
-                    <h3 data-i18n="thoughts.t3.title">工作与生活</h3>
-                    <p data-i18n="thoughts.t3.content">
-                        最好的代码往往是在散步时想出来的。给自己留出发呆的时间，比一直盯着屏幕更重要...
-                    </p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系 -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">联系我</h2>
-            <p class="section-desc" data-i18n="contact.desc">有想法想交流？欢迎随时联系我</p>
-            
+        <!-- 联系 -->
+        <section id="contact" class="section">
+            <h2 class="section-title">联系</h2>
             <div class="contact-content">
-                <div class="contact-primary">
-                    <a href="mailto:liuym0212@gmail.com" class="contact-email">
-                        <i class="fas fa-envelope"></i>
-                        liuym0212@gmail.com
-                    </a>
-                    <p class="contact-note" data-i18n="contact.note">
-                        无论是技术讨论、合作机会，还是单纯想聊聊天，都欢迎给我发邮件。我会尽快回复。
-                    </p>
-                </div>
-                <div class="contact-social">
-                    <p data-i18n="contact.social">你也可以在这里找到我：</p>
-                    <div class="social-list">
-                        <a href="https://github.com" target="_blank" class="social-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://linkedin.com" target="_blank" class="social-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="#" class="social-item">
-                            <i class="fas fa-rss"></i>
-                            <span data-i18n="contact.blog">博客</span>
-                        </a>
-                    </div>
+                <p class="contact-text">
+                    有想法想讨论？欢迎随时联系。
+                </p>
+                <a href="mailto:liuym0212@gmail.com" class="contact-email">liuym0212@gmail.com</a>
+                <div class="contact-socials">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-rss"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 页脚 -->
+    <!-- 简洁页脚 -->
     <footer class="footer">
-        <div class="container">
-            <p class="footer-quote" data-i18n="footer.quote">
-                "保持好奇，保持简单。"
-            </p>
-            <p class="footer-copyright">
-                © 2026 · <span data-i18n="footer.made">用 ❤️ 和 ☕️ 制作</span>
-            </p>
-        </div>
+        <p>© 2026 刘一鸣 · 保持好奇</p>
     </footer>
 
     <script src="script.js"></script>
